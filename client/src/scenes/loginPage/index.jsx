@@ -13,7 +13,7 @@ const LoginPage = () => {
         textAlign="center"
       >
         <Typography fontWeight="bold" fontSize="32px" color="primary">
-          Sociopedia
+          Face2Face
         </Typography>
       </Box>
       <Box
@@ -24,7 +24,7 @@ const LoginPage = () => {
         backgroundColor={theme.palette.background.alt}
       >
         <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
-          Welcome to SocioPedia, the Social Media for Sociopaths!
+          Welcome to Face2Face!
         </Typography>
         <Form />
       </Box>

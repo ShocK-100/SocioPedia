@@ -89,14 +89,12 @@ const Form = () => {
     const loggedIn = await loggedInResponse.json();
     onSubmitProps.resetForm();
     if (loggedIn) {
-      console.log(loggedIn);
       dispatch(
         setLogin({
           user: loggedIn.user,
           token: loggedIn.token,
         })
       );
-      console.log("HI");
       navigate("/home");
     }
   };
