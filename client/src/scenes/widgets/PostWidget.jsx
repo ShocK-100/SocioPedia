@@ -23,7 +23,6 @@ const PostWidget = ({
   likes,
   comments,
 }) => {
-  console.log("comments: ", comments);
   const [isComments, setIsComments] = useState(false);
   const dispatch = useDispatch();
   const token = useSelector((state) => state.token);
@@ -55,7 +54,11 @@ const PostWidget = ({
         name={name}
         subtitle={location}
         userPicturePath={userPicturePath}
+        isUserPostOwner={
+          useSelector((state) => state.user._id) === postUserId ? false : true
+        }
       />
+
       <Typography color={main} sx={{ mt: "1rem" }}>
         {description}
       </Typography>
