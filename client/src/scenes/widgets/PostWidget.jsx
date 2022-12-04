@@ -59,7 +59,7 @@ const PostWidget = ({
         }
       />
 
-      <Typography color={main} sx={{ mt: "1rem" }}>
+      <Typography color={main} sx={{ mt: "1rem", wordBreak: "break-word" }}>
         {description}
       </Typography>
       {picturePath && (

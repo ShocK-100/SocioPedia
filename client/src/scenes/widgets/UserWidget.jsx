@@ -48,6 +48,8 @@ const UserWidget = ({ userId, picturePath }) => {
     friends,
   } = user;
 
+  const fullName = `${firstName} ${lastName}`;
+
   return (
     <WidgetWrapper>
       {/* FIRST ROW */}
@@ -64,13 +66,14 @@ const UserWidget = ({ userId, picturePath }) => {
               color={dark}
               fontWeight="500"
               sx={{
+                wordBreak: "break-word",
                 "&:hover": {
                   color: palette.primary.light,
                   cursor: "pointer",
                 },
               }}
             >
-              {firstName} {lastName}
+              {fullName.length > 24 ? fullName.slice(0, 24) + "..." : fullName}
             </Typography>
             <Typography color={medium}>{friends.length} friends</Typography>
           </Box>
@@ -84,11 +87,17 @@ const UserWidget = ({ userId, picturePath }) => {
       <Box p="1rem 0">
         <Box display="flex" alignItems="center" gap="1rem" mb="0.5rem">
           <LocationOnOutlined fontSize="large" sx={{ color: main }} />
-          <Typography color={medium}>{location}</Typography>
+          <Typography sx={{ wordBreak: "break-word" }} color={medium}>
+            {location.length > 45 ? location.slice(0, 42) + "..." : location}
+          </Typography>
         </Box>
         <Box display="flex" alignItems="center" gap="1rem">
           <WorkOutlineOutlined fontSize="large" sx={{ color: main }} />
-          <Typography color={medium}>{occupation}</Typography>
+          <Typography sx={{ wordBreak: "break-word" }} color={medium}>
+            {occupation.length > 45
+              ? occupation.slice(0, 42) + "..."
+              : occupation}
+          </Typography>
         </Box>
       </Box>
 
