@@ -100,6 +100,7 @@ const Form = () => {
   };
 
   const handleFormSubmit = async (values, onSubmitProps) => {
+    console.log("handleFormSubmit");
     if (isLogin) await login(values, onSubmitProps);
     if (isRegister) await register(values, onSubmitProps);
   };
@@ -131,7 +132,7 @@ const Form = () => {
             {isRegister && (
               <>
                 <TextField
-                  label="First Name"
+                  label="First Name *"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.firstName}
@@ -143,7 +144,7 @@ const Form = () => {
                   sx={{ gridColumn: "span 2" }}
                 />
                 <TextField
-                  label="Last Name"
+                  label="Last Name *"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.lastName}
@@ -153,7 +154,7 @@ const Form = () => {
                   sx={{ gridColumn: "span 2" }}
                 />
                 <TextField
-                  label="Location"
+                  label="Location *"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.location}
@@ -163,7 +164,7 @@ const Form = () => {
                   sx={{ gridColumn: "span 4" }}
                 />
                 <TextField
-                  label="Occupation"
+                  label="Occupation *"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.occupation}
@@ -196,7 +197,7 @@ const Form = () => {
                       >
                         <input {...getInputProps()} />
                         {!values.picture ? (
-                          <p>Add Picture Here</p>
+                          <p>Add Picture Here *</p>
                         ) : (
                           <FlexBetween>
                             <Typography>{values.picture.name}</Typography>
@@ -210,7 +211,7 @@ const Form = () => {
               </>
             )}
             <TextField
-              label="Email"
+              label="Email *"
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.email}
@@ -220,7 +221,7 @@ const Form = () => {
               sx={{ gridColumn: "span 4" }}
             />
             <TextField
-              label="Password"
+              label="Password *"
               type="password"
               onBlur={handleBlur}
               onChange={handleChange}
